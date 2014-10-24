@@ -26,7 +26,7 @@ class YellowSerper():
             params.update(
                 dict((k, v) for k, v in kwargs.items() if k in params_allowed)
             )
-        link = "%s/%s" % (self.request_url, urllib.urlencode(params))
+        link = "%s?%s" % (self.request_url, urllib.urlencode(params))
         response = requests.get(link)
 
         return response.text
